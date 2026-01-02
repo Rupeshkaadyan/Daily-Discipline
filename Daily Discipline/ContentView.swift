@@ -52,10 +52,18 @@ struct ContentView: View {
                     }
                 }
             }
+            Button("Reset Day") {
+                for i in completed.indices {
+                    completed[i] = false
+                }
+            }
+            .padding(.top, 20)
+            .foregroundColor(.red)
         }
         .padding()
     }
 }
+
 
 #Preview {
     ContentView()
