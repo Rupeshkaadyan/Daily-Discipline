@@ -8,31 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     @State private var habits = [
         "Study iOS",
         "Workout",
         "Dink Water",
         "Sleep on Time"
     ]
-
+    
     @State private var completed = [
         false,
         false,
         false,
         false
     ]
-
+    
     var body: some View {
         VStack(spacing: 20) {
-
+            
             Text("Daily Discipline")
                 .font(.largeTitle)
                 .bold()
-
+            
             Text("\(completed.filter { $0 }.count) / \(completed.count) completed")
                 .font(.title2)
-
+            
             VStack(spacing: 12) {
                 ForEach(habits.indices, id: \.self) { index in
                     Button {
@@ -43,9 +43,9 @@ struct ContentView: View {
                                 .font(.title3)
                                 .strikethrough(completed[index])
                                 .opacity(completed[index] ? 0.5 : 1)
-
+                            
                             Spacer()
-
+                            
                             Image(systemName: completed[index] ? "checkmark.circle.fill" : "circle")
                                 .foregroundColor(completed[index] ? .green : .gray)
                         }
@@ -56,6 +56,10 @@ struct ContentView: View {
                 for i in completed.indices {
                     completed[i] = false
                 }
+                Button("Reset Days") {
+                    for i in completed.indices {
+                        completed[i] = false
+                    }
             }
             .padding(.top, 20)
             .foregroundColor(.red)
