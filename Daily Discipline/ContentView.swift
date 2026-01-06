@@ -56,18 +56,8 @@ struct ContentView: View {
                 for i in completed.indices {
                     completed[i] = false
                 }
-                Button("Reset Days 30") {
-                    for i in completed.indices {
-                        completed[i] = false
-                    }
-                    Button("Reset Days 40") {
-                        for i in completed.indices {
-                            completed[i] = false
-                        }
-                        Button("connccted") {
-                            for i in completed.indices {
-                                completed[i] = false
-                            }
+               
+                    
             }
             .padding(.top, 20)
             .foregroundColor(.red)
