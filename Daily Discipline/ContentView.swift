@@ -13,7 +13,8 @@ struct ContentView: View {
         "Study iOS",
         "Workout",
         "Dink Water",
-        "Sleep on Time"
+        "Sleep on Time",
+        "Clean Table"
     ]
     
     @State private var completed = [
